@@ -1,12 +1,45 @@
-.venv/
-__pycache__/
-*.pyc
-.pytest_cache/
+# Environment variables and secrets
 .env
+.env.*
+!.env.example
 
-data/database/*
-data/processed/*
-logs/*
+# Python environments
+.venv/
+venv/
+env/
 
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+logs/
+*.log
+
+# Local databases
 *.duckdb
 *.db
+*.sqlite
+*.sqlite3
+
+# Local data and generated files
+data/
+outputs/
+*.parquet
+*.xlsx
+*.csv
+
+# Secrets and private keys
+*.pem
+*.key
+
+# OS files
+.DS_Store
+Thumbs.db

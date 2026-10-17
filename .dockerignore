@@ -1,0 +1,32 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python environment and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Git
+.git/
+.gitignore
+
+# Local datasets, databases, and logs
+data/
+logs/
+*.duckdb
+*.db
+
+# Reports and temporary files
+reports/
+*.log
+*.tmp
+
+# Local development artifacts
+.vscode/
+.idea/

@@ -1,0 +1,83 @@
+{
+  "total_cases": 5,
+  "passed_cases": 5,
+  "failed_cases": 0,
+  "task_success_rate": 100.0,
+  "execution_success_rate": 100.0,
+  "error_rate": 0.0,
+  "average_latency_seconds": 0.053087,
+  "results": [
+    {
+      "case_id": "workflow_total_revenue",
+      "category": "end_to_end_workflow",
+      "expected_tool": null,
+      "expected_value": 1080000.0,
+      "actual_value": 1080000.0,
+      "tolerance": 0.01,
+      "execution_success": true,
+      "passed": true,
+      "latency_seconds": 0.080408,
+      "error": null,
+      "details": null
+    },
+    {
+      "case_id": "workflow_average_revenue",
+      "category": "end_to_end_workflow",
+      "expected_tool": null,
+      "expected_value": 108000.0,
+      "actual_value": 108000.0,
+      "tolerance": 0.01,
+      "execution_success": true,
+      "passed": true,
+      "latency_seconds": 0.094005,
+      "error": null,
+      "details": null
+    },
+    {
+      "case_id": "workflow_revenue_by_region",
+      "category": "end_to_end_workflow",
+      "expected_tool": null,
+      "expected_value": 1080000.0,
+      "actual_value": 1080000.0,
+      "tolerance": 0.01,
+      "execution_success": true,
+      "passed": true,
+      "latency_seconds": 0.042455,
+      "error": null,
+      "details": {
+        "regional_revenue": {
+          "South": 410000.0,
+          "North": 250000.0,
+          "East": 230000.0,
+          "West": 190000.0
+        }
+      }
+    },
+    {
+      "case_id": "workflow_business_kpis",
+      "category": "end_to_end_workflow",
+      "expected_tool": null,
+      "expected_value": 315000.0,
+      "actual_value": 315000.0,
+      "tolerance": 0.01,
+      "execution_success": true,
+      "passed": true,
+      "latency_seconds": 0.046908,
+      "error": null,
+      "details": null
+    },
+    {
+      "case_id": "workflow_unsupported_question",
+      "category": "error_handling",
+      "expected_tool": null,
+      "expected_value": 0.0,
+      "actual_value": 0.0,
+      "tolerance": 0.01,
+      "execution_success": true,
+      "passed": true,
+      "latency_seconds": 0.001661,
+      "error": null,
+      "details": null
+    }
+  ]
+}
