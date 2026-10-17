@@ -1,73 +1,91 @@
 # 🚀 NEXORA AI — Autonomous AI Business Intelligence & Data Analytics Agent
 
-An AI-powered business intelligence platform that helps users analyze datasets, validate data quality, generate SQL-based insights, identify anomalies, calculate KPIs, and explore business questions through an interactive interface.
+<p align="center">
+  <strong>Transform business datasets into actionable insights using AI-powered analytics.</strong>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.12+-blue?logo=python" alt="Python">
+  <img src="https://img.shields.io/badge/FastAPI-Backend-009688?logo=fastapi" alt="FastAPI">
+  <img src="https://img.shields.io/badge/Streamlit-Frontend-FF4B4B?logo=streamlit" alt="Streamlit">
+  <img src="https://img.shields.io/badge/LangGraph-Agent%20Workflow-1C3C3C" alt="LangGraph">
+  <img src="https://img.shields.io/badge/DuckDB-Analytics-FFF000" alt="DuckDB">
+  <img src="https://img.shields.io/badge/Docker-Containerized-2496ED?logo=docker" alt="Docker">
+  <img src="https://img.shields.io/badge/Tests-440%20Passed-brightgreen" alt="Tests">
+</p>
 
 ---
 
-## 📌 Project Overview
+## 📌 Description
 
-Business teams often spend significant time cleaning datasets, writing SQL queries, calculating metrics, and preparing reports. Traditional analytics workflows require users to have technical knowledge of databases and data analysis tools.
+**NEXORA AI** is an AI-powered Business Intelligence and Data Analytics platform designed to simplify dataset exploration, data quality assessment, SQL-based analysis, and business insight generation.
 
-**NEXORA AI** aims to simplify this process by combining data analytics, AI agents, SQL execution, data profiling, and interactive visualizations in one platform.
+The platform combines a FastAPI backend, Streamlit frontend, LangGraph-based agent workflow, DuckDB analytical storage, and modular analytics components.
 
-Users can upload datasets, inspect data quality, ask business questions, and obtain analytical results through an interactive application.
+Users can upload business datasets, inspect data quality, ask business questions, calculate KPIs, explore statistical insights, detect anomalies, and evaluate analytical workflows through a unified application.
 
----
+The project also includes Docker-based deployment, Model Context Protocol (MCP) integration, retrieval-augmented generation (RAG) components, and LangSmith tracing.
 
 ## 🎯 Problem Statement
 
-Traditional business intelligence workflows face several challenges:
+Traditional business intelligence workflows can require significant manual effort and technical expertise.
 
-- Manual data analysis consumes time.
-- Writing SQL queries requires technical expertise.
-- Data quality issues can affect analytical results.
-- Identifying trends and anomalies requires additional analysis.
-- Business users need accessible interfaces for exploring datasets.
-- Analytical workflows often involve disconnected tools.
+Common challenges include:
 
-NEXORA AI addresses these challenges by integrating data processing, analytics, AI-assisted workflows, and evaluation into one application.
+- Writing SQL queries to answer business questions.
+- Identifying missing values, duplicate records, and data inconsistencies.
+- Calculating KPIs and analyzing business performance.
+- Detecting anomalies and understanding potential root causes.
+- Exploring datasets without building reports manually.
+- Testing and evaluating AI-assisted analytical workflows.
+- Maintaining separate tools for data processing, analytics, and visualization.
 
----
+NEXORA AI aims to bring these analytical capabilities together in a modular, AI-assisted platform.
 
 ## 💡 Solution
 
-NEXORA AI combines a Python analytics backend with AI-assisted analytical workflows and an interactive Streamlit frontend.
+NEXORA AI integrates dataset ingestion, profiling, data quality checks, SQL analytics, statistical analysis, and AI agent orchestration.
 
-The platform supports dataset ingestion, data profiling, quality validation, SQL-based analysis, statistical calculations, KPI generation, forecasting, anomaly detection, and visualization.
+The application follows this general process:
 
-Its modular architecture separates analytics, agent workflows, data storage, API endpoints, and evaluation components.
+1. Upload and register a dataset.
+2. Inspect its structure and data quality.
+3. Submit a business question through the interface.
+4. Coordinate analytical operations through the agent workflow.
+5. Execute validated SQL queries and analytical operations.
+6. Return results and supporting evidence.
+7. Evaluate selected workflows using a dedicated evaluation framework.
 
----
+The platform is designed to make analytical workflows more accessible while retaining structured backend processing and testable components.
 
-## ✨ Features
+## 🚀 Features
 
-### 📂 Dataset Ingestion
-- Upload supported CSV, Excel, and Parquet datasets.
-- Validate uploaded files.
-- Load datasets into DuckDB for analytical queries.
-
-### 🔍 Data Profiling
-- Inspect dataset structure and columns.
-- Generate data profiling information.
-- Identify potential data quality issues.
-
-### 🛡️ Data Quality
+### 📂 Dataset Management
+- Upload CSV, Excel, and Parquet files.
 - Validate uploaded datasets.
-- Identify common data quality problems.
-- Provide information to support data-quality assessment.
+- Register datasets in DuckDB.
+- List available datasets through the API and frontend.
 
-### 🤖 AI Agent Workflows
+### 🔍 Data Profiling and Quality
+- Inspect dataset columns and data types.
+- Analyze missing values.
+- Identify duplicate records.
+- Inspect numerical and categorical columns.
+- Generate data-quality reports.
+
+### 🤖 AI Agent Workflow
 - Planning and analytical task coordination.
 - Business insight generation.
 - Recommendation generation.
 - Root-cause analysis.
-- Self-correction capabilities.
+- Self-correction workflow components.
 
 ### 🧮 SQL Analytics
 - SQL-assisted business analysis.
-- SQL validation.
+- SQL query validation.
 - Controlled query execution.
-- Analytical result generation.
+- Aggregations and analytical calculations.
+- Structured execution results.
 
 ### 📊 Business Intelligence
 - KPI calculations.
@@ -76,124 +94,123 @@ Its modular architecture separates analytics, agent workflows, data storage, API
 - Forecasting.
 - Data visualization.
 
-### 📚 Retrieval-Augmented Generation (RAG)
+### 📚 Retrieval-Augmented Generation
 - Document loading.
 - Text chunking.
 - Embedding generation.
-- Vector storage and retrieval.
+- Vector storage and retrieval components.
 
 ### 🔌 API and Integrations
-- FastAPI backend.
-- REST API endpoints.
-- Model Context Protocol (MCP) integration.
+- FastAPI REST endpoints.
+- Interactive Swagger API documentation.
+- Model Context Protocol integration.
 - Redis integration.
+- Ollama-based LLM integration.
 
-### 📈 Evaluation
-- Evaluation cases for analytical workflows.
-- Task success tracking.
-- Execution success tracking.
+### 📈 Evaluation and Observability
+- Automated evaluation cases.
+- Task success measurement.
+- Execution success measurement.
 - Error-rate measurement.
 - Latency measurement.
+- LangSmith workflow tracing.
 
 ### 🐳 Deployment
-- Docker-based containerization.
-- Docker Compose configuration.
-- Separate backend and frontend services.
-
----
+- Separate backend and frontend containers.
+- Dockerfiles for application services.
+- Docker Compose orchestration.
+- Health-check endpoint.
 
 ## 🏗️ Architecture
 
 ```text
-                         ┌────────────────────────┐
-                         │         USER           │
-                         └────────────┬───────────┘
-                                      │
-                                      ▼
-                         ┌────────────────────────┐
-                         │    Streamlit Frontend  │
-                         │  Interactive Dashboard │
-                         └────────────┬───────────┘
-                                      │
-                                      ▼
-                         ┌────────────────────────┐
-                         │     FastAPI Backend    │
-                         │ REST API and Endpoints │
-                         └────────────┬───────────┘
-                                      │
-                                      ▼
-                         ┌────────────────────────┐
-                         │   LangGraph Workflow   │
-                         │  Agent Orchestration   │
-                         └────────────┬───────────┘
-                                      │
-                 ┌────────────────────┼────────────────────┐
+                         ┌──────────────────────────┐
+                         │           USER           │
+                         └─────────────┬────────────┘
+                                       │
+                                       ▼
+                         ┌──────────────────────────┐
+                         │    Streamlit Frontend    │
+                         │ Dashboard and Data UI    │
+                         └─────────────┬────────────┘
+                                       │
+                                       ▼
+                         ┌──────────────────────────┐
+                         │      FastAPI Backend     │
+                         │       REST API           │
+                         └─────────────┬────────────┘
+                                       │
+                                       ▼
+                         ┌──────────────────────────┐
+                         │   LangGraph Workflow     │
+                         │ Agent Orchestration      │
+                         └─────────────┬────────────┘
+                                       │
+                 ┌─────────────────────┼─────────────────────┐
+                 │                     │                     │
+                 ▼                     ▼                     ▼
+        ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐
+        │ SQL Analytics   │  │ BI Analytics    │  │ RAG Components  │
+        │ SQL Validation  │  │ KPI / Statistics│  │ Embeddings      │
+        │ Query Execution │  │ Forecasting      │  │ Vector Storage  │
+        └────────┬────────┘  └────────┬────────┘  └────────┬────────┘
                  │                    │                    │
-                 ▼                    ▼                    ▼
-        ┌────────────────┐  ┌────────────────┐  ┌────────────────┐
-        │  SQL Analytics │  │ BI Analytics   │  │   RAG Pipeline │
-        │ SQL Validation │  │ KPIs/Statistics│  │ Embeddings     │
-        │ Query Execution│  │ Forecasting     │  │ Vector Storage │
-        └───────┬────────┘  └───────┬────────┘  └───────┬────────┘
-                │                   │                   │
-                └───────────────────┼───────────────────┘
-                                    │
-                                    ▼
-                         ┌────────────────────────┐
-                         │      DuckDB Storage    │
-                         │ Analytical Data Layer  │
-                         └────────────────────────┘
+                 └────────────────────┼────────────────────┘
+                                      │
+                                      ▼
+                         ┌──────────────────────────┐
+                         │       DuckDB Storage     │
+                         │  Analytical Data Layer   │
+                         └──────────────────────────┘
 
-                 Supporting Components:
-                 • Ollama / LLM Integration
-                 • MCP Integration
-                 • Redis Integration
-                 • Evaluation Framework
-                 • Docker Deployment
+        Supporting Components
+        ├── Ollama / LLM Integration
+        ├── MCP Integration
+        ├── Redis Integration
+        ├── Evaluation Framework
+        ├── LangSmith Tracing
+        └── Docker Deployment
 ```
-
----
 
 ## 🔄 Workflow
 
-1. The user uploads a dataset through the frontend.
-2. The backend validates the uploaded file.
-3. The dataset is loaded into DuckDB.
-4. Profiling and data-quality components inspect the dataset.
-5. The user submits a business question.
-6. The analytical workflow coordinates the relevant processing steps.
-7. SQL and analytics components execute the required operations.
-8. The application returns analytical results and supporting information.
-9. Evaluation components measure selected workflow outcomes.
+1. **Dataset ingestion:** The user uploads a supported dataset.
+2. **Input validation:** The backend validates the uploaded file.
+3. **Data registration:** The dataset is loaded into DuckDB.
+4. **Profiling:** Dataset structure, column types, and quality information are inspected.
+5. **Question submission:** The user asks a business question.
+6. **Workflow orchestration:** The agent workflow coordinates the analytical steps.
+7. **SQL execution:** Relevant queries are validated and executed.
+8. **Analytics:** The application computes the requested results.
+9. **Response generation:** Results and supporting evidence are returned.
+10. **Evaluation:** Selected workflows are measured using evaluation cases.
 
----
-
-## 🛠️ Technology Stack
+## 🛠️ Tech Stack
 
 | Category | Technologies |
 |---|---|
 | Programming Language | Python |
-| Backend | FastAPI |
+| Backend API | FastAPI |
 | Frontend | Streamlit |
 | Agent Orchestration | LangGraph |
 | LLM Integration | Ollama |
 | Data Processing | Pandas, Polars |
 | Analytical Database | DuckDB |
 | SQL Validation | SQLGlot |
-| Data Visualization | Plotly |
+| Visualization | Plotly |
 | Machine Learning | Scikit-learn |
 | Forecasting | Prophet |
-| Vector Search | FAISS/Chroma or another configured vector-store implementation |
-| Cache / Data Integration | Redis |
+| Caching / Integration | Redis |
+| Retrieval-Augmented Generation | Custom RAG components |
+| Embeddings | Configured embedding provider |
+| Vector Storage | Configured vector-store implementation |
 | AI Observability | LangSmith |
-| Protocol Integration | MCP |
+| Tool Integration | Model Context Protocol (MCP) |
 | Containerization | Docker, Docker Compose |
 | Testing | Pytest |
 | API Testing | HTTPX |
 
-**Note:** The actual vector-store implementation and optional integrations depend on the project configuration. The table describes the technology stack and intended integration areas, not a claim that every component is active in every workflow.
-
----
+*The stack reflects project dependencies and implementation areas. Individual optional components may require separate configuration before use.*
 
 ## 📂 Project Structure
 
@@ -218,21 +235,16 @@ agent/
 │   │
 │   ├── api/
 │   │   └── main.py
-│   │
 │   ├── config/
 │   │   └── settings.py
-│   │
 │   ├── context/
 │   │   └── conversation.py
-│   │
 │   ├── evaluation/
 │   │   ├── evaluator.py
 │   │   └── run_evaluation.py
-│   │
 │   ├── graph/
 │   │   ├── state.py
 │   │   └── workflow.py
-│   │
 │   ├── ingestion/
 │   ├── integrations/
 │   │   └── mcp_server.py
@@ -240,6 +252,11 @@ agent/
 │   │   └── ollama_provider.py
 │   ├── profiling/
 │   ├── rag/
+│   │   ├── chunker.py
+│   │   ├── document_loader.py
+│   │   ├── embeddings.py
+│   │   ├── rag_pipeline.py
+│   │   └── vector_store.py
 │   ├── sql/
 │   └── storage/
 │       ├── duckdb_manager.py
@@ -248,42 +265,32 @@ agent/
 ├── data/
 │   └── raw/
 │       └── sales.csv
-│
 ├── reports/
 │   └── evaluation_report.json
-│
 ├── streamlit_app/
 │   └── app.py
-│
 ├── tests/
-│
 ├── .dockerignore
 ├── .gitignore
 ├── Dockerfile
 ├── Dockerfile.frontend
 ├── docker-compose.yml
-├── package.json
-├── package-lock.json
 ├── requirements.txt
 └── README.md
 ```
 
----
+## 📋 Prerequisites
 
-## ⚙️ Prerequisites
-
-Install or configure the following:
+Before running NEXORA AI, ensure the following are available:
 
 - Python 3.12 or a compatible version.
 - Git.
-- Docker Desktop, if using Docker deployment.
-- Ollama, if using the configured local LLM.
-- The LLM model configured in your environment.
-- Required Python packages.
+- Docker Desktop, for containerized deployment.
+- Ollama, if using the local LLM integration.
+- The model configured in your environment.
+- Required dependencies from `requirements.txt`.
 
----
-
-## 🚀 Installation
+## ⚙️ Installation
 
 ### 1. Clone the repository
 
@@ -292,7 +299,7 @@ git clone https://github.com/vummidiganesh55/Ai-analyst.git
 cd Ai-analyst
 ```
 
-### 2. Create a virtual environment
+### 2. Create and activate a virtual environment
 
 **Windows PowerShell:**
 
@@ -310,11 +317,9 @@ pip install -r requirements.txt
 
 ### 4. Configure environment variables
 
-Create a local `.env` file in the project root.
+Create a `.env` file in the project root. Configure the variables required by the application.
 
-Add the configuration values required by `app/config/settings.py` and the integrations you intend to use.
-
-For example:
+Example local configuration:
 
 ```env
 OLLAMA_BASE_URL=http://localhost:11434
@@ -322,39 +327,37 @@ OLLAMA_MODEL=qwen2.5:3b
 DATABASE_PATH=data/database/bi_agent.duckdb
 ```
 
-Add other required settings according to your configuration.
+Check `app/config/settings.py` and `docker-compose.yml` for the exact environment-variable names expected by your current configuration.
 
-**Security:** Never commit API keys, passwords, access tokens, or other secrets to GitHub. Keep `.env` out of version control.
+**Security:** Never commit API keys, passwords, access tokens, or other secrets to GitHub. Keep `.env` excluded from version control.
 
-### 5. Configure the local LLM
+### 5. Configure Ollama
 
-If using Ollama, install it and pull the configured model:
+If your selected workflow uses Ollama, install Ollama and download the configured model:
 
 ```bash
 ollama pull qwen2.5:3b
 ```
 
-Make sure the Ollama service is running before using features that depend on it.
+Ensure the Ollama service is running before testing LLM-dependent features.
 
-### 6. Start the backend
+## ▶️ Usage
+
+### Start the backend
+
+From the project root:
 
 ```bash
 uvicorn app.api.main:app --reload
 ```
 
-Backend API:
+The backend should be available at:
 
-http://localhost:8000
+- **API:** http://localhost:8000
+- **Swagger documentation:** http://localhost:8000/docs
+- **Health check:** http://localhost:8000/health
 
-Interactive API documentation:
-
-http://localhost:8000/docs
-
-Health endpoint:
-
-http://localhost:8000/health
-
-### 7. Start the frontend
+### Start the frontend
 
 Open a second terminal, activate the virtual environment, and run:
 
@@ -362,168 +365,293 @@ Open a second terminal, activate the virtual environment, and run:
 streamlit run streamlit_app/app.py
 ```
 
-Open the local URL displayed by Streamlit.
+Open the local URL printed by Streamlit.
 
----
+### Run with Docker Compose
 
-## 🐳 Docker Deployment
+The project includes separate backend and frontend containers.
 
-Docker Compose is included for running the backend and frontend as separate services.
-
-### Start the application
-
-From the project root:
+Build and start the services:
 
 ```bash
 docker compose up --build -d
 ```
 
-### Check service status
+Check container status:
 
 ```bash
 docker compose ps
 ```
 
-### View logs
+View service logs:
 
 ```bash
 docker compose logs -f
 ```
 
-### Stop the application
+Stop the services:
 
 ```bash
 docker compose down
 ```
 
-With the current local port configuration:
+With the current Docker port mappings:
 
-| Component | URL |
+| Service | URL |
 |---|---|
-| Streamlit Frontend | http://localhost:8502 |
-| FastAPI Backend | http://localhost:8001 |
-| API Documentation | http://localhost:8001/docs |
+| Frontend | http://localhost:8502 |
+| Backend | http://localhost:8001 |
+| Swagger API Docs | http://localhost:8001/docs |
 | Health Check | http://localhost:8001/health |
 
-The Docker backend uses the configured Ollama host address. Ensure Ollama is available and the required model has been downloaded.
+The containerized backend is configured to reach Ollama on the host through `host.docker.internal`. Ensure that the required model is installed and the service is reachable.
 
----
+## 💡 Example
+
+### Business question
+
+```text
+What is the total revenue?
+```
+
+### Example SQL operation
+
+```sql
+SELECT SUM(revenue) AS total_revenue
+FROM sales_data;
+```
+
+### Example result
+
+```json
+{
+  "total_revenue": 1080000
+}
+```
+
+The included sample evaluation report records this result for its total-revenue workflow case.
+
+The actual result depends on the selected dataset and its contents.
 
 ## 🧪 Testing
 
-Run the automated test suite from the project root:
+The automated test suite was run successfully in the captured test output.
+
+**Recorded result: 440 tests passed in 35.94 seconds.**
+
+Run the test suite:
 
 ```bash
 python -m pytest -q
 ```
 
-To run an individual test module:
+Run an individual test module:
 
 ```bash
 python -m pytest tests/test_ingestion.py -v
 ```
 
-Run the project evaluation framework:
+Run the evaluation framework:
 
 ```bash
 python -m app.evaluation.run_evaluation
 ```
 
-Review the generated evaluation results in:
+These commands allow you to rerun the tests and evaluation after code changes.
 
-```text
-reports/evaluation_report.json
-```
+## 📊 Evaluation
 
-Test results can vary with code changes, environment configuration, datasets, and model availability.
+The project includes an evaluation framework for measuring selected analytical workflows.
 
----
+### Recorded evaluation results
 
-## 📊 Evaluation Metrics
-
-The evaluation framework reports metrics such as:
-
-| Metric | Description |
-|---|---|
-| Task Success Rate | Percentage of evaluation tasks that pass |
-| Execution Success Rate | Percentage of evaluation cases that execute successfully |
-| Error Rate | Percentage of evaluation cases that encounter errors |
-| Average Latency | Average time required to execute evaluated cases |
-
-### Sample Evaluation Results
-
-The included evaluation report records the following results for five evaluation cases:
+The included `reports/evaluation_report.json` records five evaluation cases.
 
 | Metric | Recorded Result |
 |---|---:|
-| Total Cases | 5 |
+| Total Evaluation Cases | 5 |
 | Passed Cases | 5 |
 | Failed Cases | 0 |
 | Task Success Rate | 100% |
 | Execution Success Rate | 100% |
 | Error Rate | 0% |
-| Average Latency | Approximately 0.053 seconds |
+| Average Latency | 0.053087 seconds |
 
-These figures describe the included evaluation run only. They do not establish universal accuracy, production reliability, or performance across larger datasets and different workloads.
+### Evaluation coverage
 
----
+The included cases cover:
 
-## 🔐 Security Considerations
+- Total revenue calculation.
+- Average revenue calculation.
+- Revenue aggregation by region.
+- Business KPI calculation.
+- Handling an unsupported question.
 
-Security considerations for this project include:
+### Interpretation
 
-- Input validation for uploaded datasets.
-- SQL query validation before execution.
-- Controlled handling of analytical queries.
-- Environment-based configuration for sensitive settings.
+These figures describe the included five-case evaluation run. They do not establish universal accuracy or production reliability.
+
+The measured latency is specific to the recorded environment and evaluation workload. Repeat the evaluation under controlled conditions before using these figures to compare model or system performance.
+
+## 📸 Screenshots / Demo
+
+The following screenshots document the application's interface, API, analytics, deployment, and evaluation.
+
+**Before these images can render, upload the corresponding image files to a `screenshots/` folder in this GitHub repository.**
+
+### 1. Business Intelligence Dashboard
+
+![NEXORA AI Dashboard](screenshots/dashboard.png)
+
+The dashboard displays backend status, registered datasets, and platform capabilities.
+
+### 2. Dataset Ingestion
+
+![Dataset Ingestion](screenshots/dataset_ingestion.png)
+
+The dataset management interface supports uploading CSV, Excel, and Parquet files.
+
+### 3. Data Quality Report
+
+![Data Quality Report](screenshots/data_quality_report.png)
+
+The data-quality endpoint reports dataset structure, missing values, duplicates, and quality information.
+
+### 4. Business Intelligence Query
+
+![Business Intelligence Query](screenshots/business_intelligence_query.png)
+
+Example natural-language question and structured SQL execution results.
+
+### 5. API Documentation
+
+![FastAPI Swagger Documentation](screenshots/api_documentation.png)
+
+Swagger UI exposes the available API endpoints and their request schemas.
+
+### 6. API Health Check
+
+![API Health Check](screenshots/api_health.png)
+
+The health endpoint confirms that the backend service is responding.
+
+### 7. Docker Deployment
+
+![Docker Deployment](screenshots/docker_deployment.png)
+
+Docker Compose shows the backend and frontend containers running.
+
+### 8. Evaluation Results
+
+![Evaluation Results](screenshots/evaluation_results.png)
+
+The recorded evaluation report shows the results of five test cases.
+
+### 9. Automated Test Results
+
+![Pytest Results](screenshots/pytest_results.png)
+
+The captured test output records 440 passing tests.
+
+### 10. LangSmith Trace
+
+![LangSmith Trace](screenshots/langsmith_trace.png)
+
+The trace illustrates a LangGraph workflow execution and its associated inputs, outputs, and execution steps.
+
+## ⚡ Performance
+
+The project includes recorded measurements from its evaluation and test runs.
+
+| Measurement | Recorded Result | Context |
+|---|---:|---|
+| Evaluation cases | 5 | Included evaluation report |
+| Evaluation success rate | 100% | Five recorded cases |
+| Average evaluation latency | 0.053087 seconds | Included evaluation report |
+| Automated tests passed | 440 | Captured Pytest run |
+| Pytest execution time | 35.94 seconds | Captured test output |
+
+These are observed results from specific runs, not guaranteed performance benchmarks.
+
+End-to-end latency can vary with dataset size, hardware, model availability, workflow complexity, and external services.
+
+## 🔐 Security
+
+Security-related implementation areas include:
+
+- Uploaded-file validation.
+- SQL query validation.
+- Controlled SQL execution.
+- DuckDB query resource-limit and timeout testing.
+- Environment-variable-based configuration.
+- Upload-security tests.
 - Excluding local environment files from version control.
-- Testing upload and SQL execution behavior.
 
-Before production deployment, additional validation of authentication, authorization, resource limits, logging, dependency security, and deployment configuration may be required.
+### Security recommendations
 
----
+- Never publish credentials or API keys.
+- Do not upload private or personally identifiable customer data.
+- Review datasets and reports before committing them.
+- Validate generated SQL before execution.
+- Apply appropriate access controls before exposing the application publicly.
+- Review container configuration and resource limits before production deployment.
 
-## ⚠️ Limitations
-
-- Analytical quality depends on dataset quality and schema consistency.
-- LLM-generated outputs may contain errors and should be validated.
-- Forecasting quality depends on the dataset, selected method, and available historical information.
-- Evaluation results depend on the test cases and evaluation methodology.
-- Local LLM performance depends on available hardware and model configuration.
-- Production deployment requires appropriate security, monitoring, and resource management.
-
----
+Passing security-related tests does not guarantee that the entire application is free from vulnerabilities.
 
 ## 🔮 Future Improvements
 
-Potential future improvements include:
+Potential improvements include:
 
-- Expanding the evaluation dataset.
-- Adding more representative business-analysis test cases.
-- Improving error handling and recovery.
+- Expanding the evaluation dataset with more representative business questions.
+- Measuring analytical accuracy across different datasets.
+- Improving agent recovery and error-handling behavior.
 - Enhancing observability and tracing.
-- Improving dashboard usability.
-- Expanding automated integration testing.
-- Evaluating analytical quality on diverse datasets.
+- Improving the user experience for complex analytical workflows.
+- Expanding automated integration tests.
+- Evaluating performance on larger datasets.
+- Strengthening deployment security and operational monitoring.
 
----
+## ⚠️ Limitations
+
+- Results depend on the quality and structure of the uploaded data.
+- LLM-generated responses may contain errors.
+- Forecasting quality depends on historical data and model assumptions.
+- Evaluation results cover a limited set of predefined cases.
+- Local LLM performance depends on available system resources.
+- Optional integrations may require additional configuration.
+- Production use requires additional validation of security, reliability, and operational behavior.
+
+## 🤝 Contributing
+
+Contributions, bug reports, and suggestions are welcome.
+
+To contribute:
+
+1. Fork the repository.
+2. Create a feature branch.
+3. Implement your changes.
+4. Add or update relevant tests.
+5. Run the test suite.
+6. Submit a pull request describing your changes.
+
+Please avoid committing secrets, private datasets, local databases, or generated files containing sensitive information.
+
+## 📄 License
+
+No license has been specified in this repository.
+
+Until a license is added, users should not assume that the project grants permission to reuse, modify, or redistribute its code.
 
 ## 👨‍💻 Author
 
-**Sri Satya Thanuj Vummidi**
+**Vummidi Ganesh**
 
-GitHub: [@SriSatyaThanujVummidi](https://github.com/SriSatyaThanujVummidi)
+GitHub: [@vummidiganesh55](https://github.com/vummidiganesh55)
 
 Project Repository: [NEXORA AI — Ai-analyst](https://github.com/vummidiganesh55/Ai-analyst)
 
 ---
 
-## 📄 License
-
-No license has been specified in this repository yet. Unless a license is added, the project should not be assumed to grant permission for reuse, modification, or redistribution.
-
----
-
-## ⭐ Support
-
-If you find this project useful, consider starring the repository on GitHub.
+<p align="center">
+  <strong>NEXORA AI — Turning Data into Actionable Business Insights</strong>
+</p>
